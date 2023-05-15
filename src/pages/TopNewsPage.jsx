@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import NewsCard from "../components/NewsCard";
 
 const KEY = process.env.REACT_APP_KEY;
 const TopNewsPage = () => {
@@ -18,23 +19,23 @@ const TopNewsPage = () => {
       }
     };
     fetchData();
-  },[country]);
+  }, [country]);
 
-
-  console.log(newsData);
   return (
     <main>
-        <section>
-            {newsData && newsData.map((item, i) => (
-                <div key={i}>
-                    <h1>{item.title}</h1>
-                    <img src={item.urlToImage} alt='News' />
-                    <p>{item.description}</p>
-                </div>
-            ))}
-        </section>
+      <section>
+        {newsData &&
+          newsData.map((item, i) => (
+            <NewsCard
+              title={item.title}
+              imgsrc={item.urlToImage}
+              description={item.description}
+              key={i}
+            />
+          ))}
+      </section>
     </main>
-    );
+  );
 };
 
 export default TopNewsPage;
