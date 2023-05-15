@@ -12,7 +12,7 @@ const SearchForm = ({ searchSubmit }) => {
       <form onSubmit={submitHandler}>
         <label></label>
         <input onChange={e => setFormData(e.target.value)}/>
-        <button>search</button>
+        <button>Search</button>
       </form>
     </div>
   )

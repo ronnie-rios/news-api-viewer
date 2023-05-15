@@ -11,14 +11,17 @@ const Search = () => {
   
   useEffect(() => {
     const fetchData = async () => {
-      try {
+      
         const response = await fetch(`https://newsapi.org/v2/top-headlines?q=${query}&apiKey=${KEY}`);
-        const data = await response.json();
-        setNewsData(data.articles);
-        setErrState(false)
-      } catch (error) {
-        setErrState(true)
-      }
+        if(response.ok) {
+
+          const data = await response.json();
+          setNewsData(data.articles);
+          setErrState(false)
+        } else {
+          setErrState(true)
+        }
+      
     }
     fetchData();
   }, [query])

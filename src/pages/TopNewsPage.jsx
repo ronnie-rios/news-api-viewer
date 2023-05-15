@@ -6,12 +6,12 @@ const KEY = process.env.REACT_APP_KEY;
 const TopNewsPage = () => {
   const [newsData, setNewsData] = useState([]);
   // const [country, setCountry] = useState("us");
-const { country } = useCountry()
+  const { country } = useCountry()
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://newsapi.org/v2/top-headlines?country=${country}&category=business&apiKey=${KEY}`
+          `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${KEY}`
         );
         const data = await response.json();
         setNewsData(data.articles);
