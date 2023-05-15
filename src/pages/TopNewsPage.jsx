@@ -5,7 +5,7 @@ import { useCountry } from "../context/countrycontext";
 const KEY = process.env.REACT_APP_KEY;
 const TopNewsPage = () => {
   const [newsData, setNewsData] = useState([]);
-  // const [country, setCountry] = useState("us");
+  
   const { country } = useCountry()
   useEffect(() => {
     const fetchData = async () => {
