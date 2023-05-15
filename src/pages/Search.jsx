@@ -12,7 +12,7 @@ const Search = () => {
   useEffect(() => {
     const fetchData = async () => {
       
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?q=${query}&apiKey=${KEY}`);
+        const response = await fetch(`https://newsapi.org/v2/everything?q=${query}&apiKey=${KEY}`);
         if(response.ok) {
 
           const data = await response.json();

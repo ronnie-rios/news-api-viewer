@@ -3,7 +3,8 @@ import { useCountry } from '../context/countrycontext'
 
 const Header = () => {
   const { country, toggleCountry } = useCountry();
-  
+
+
   return (
     <nav>
       <Link to='/'>Top News</Link>
