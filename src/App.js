@@ -3,6 +3,7 @@ import TopNewsPage from './pages/TopNewsPage';
 import CategoriesPage from './pages/CategoriesPage';
 import Search from './pages/Search';
 import Header from './components/Header';
+import SingleNews from './pages/SingleNews';
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<TopNewsPage />}/>
-          <Route path='/' element={<CategoriesPage />}/>
-          <Route path='/' element={<Search />}/>
+          <Route path='/:id' element={<SingleNews />} />
+          <Route path='/categories' element={<CategoriesPage />}/>
+          <Route path='/search' element={<Search />}/>
         </Routes>
       </Router>
     </div>
