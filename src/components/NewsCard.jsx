@@ -1,12 +1,15 @@
-import React from "react";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 const NewsCard = ({ title, imgsrc, description, key}) => {
   return (
-    <div key={key}>
-      <h1>{title}</h1>
-      <img src={imgsrc} alt="News" />
-      <p>{description}</p> 
-    </div>
+    <Card key={key} className='m-10'>
+      {imgsrc === null ? 'no image available' : <Card.Img variant="top" src={imgsrc} alt={`News`} className=''/>}
+      <Card.Body>
+        <Card.Title className='text-2xl font-bold'>{title}</Card.Title>
+        <Card.Text>{description}</Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
 

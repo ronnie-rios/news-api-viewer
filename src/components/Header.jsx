@@ -5,7 +5,7 @@ const Header = () => {
   const { country, toggleCountry } = useCountry();
 
   return (
-    <nav className="p-4 sticky w-full top-0 left-0 right-0">
+    <nav className="p-4 w-full top-0 left-0 right-0">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <button className="btn btn-ghost normal-case text-xl">
           <Link to="/">Top News</Link>
