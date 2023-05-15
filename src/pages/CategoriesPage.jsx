@@ -35,10 +35,10 @@ const CategoriesPage = () => {
   const categoryHandler = (e) => {
     setCategory(e.target.value);
   };
-
+  console.log(newsData);
   return (
-    <section>
-      <h2>Search by category</h2>
+    <section className="p-10">
+      <h2 className="mb-8">Search for Different News Publishers by Category</h2>
       <form>
         <select onChange={categoryHandler}>
           <option>Select a category</option>
@@ -50,12 +50,10 @@ const CategoriesPage = () => {
       <div>
         {newsData &&
           newsData.map((item, i) => (
-            <NewsCard
-              title={item.title}
-              imgsrc={item.urlToImage}
-              description={item.description}
-              key={i}
-            />
+            <div className="p-6">
+              <h2>News Source: {item.name}</h2>
+              <p>{item.description}</p>
+            </div>
           ))}
       </div>
     </section>
