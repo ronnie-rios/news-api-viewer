@@ -1,8 +1,20 @@
-import React from 'react'
+import { useState } from 'react';
 
-const SearchForm = () => {
+const SearchForm = ({ searchSubmit }) => {
+  const [formData, setFormData] = useState('');
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    searchSubmit(formData);
+  }
   return (
-    <div>SearchForm</div>
+    <div>
+      <form onSubmit={submitHandler}>
+        <label></label>
+        <input onChange={e => setFormData(e.target.value)}/>
+        <button>search</button>
+      </form>
+    </div>
   )
 }
 
