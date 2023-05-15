@@ -1,4 +1,4 @@
-import { BroswerRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TopNewsPage from './pages/TopNewsPage';
 import CategoriesPage from './pages/CategoriesPage';
 import Search from './pages/Search';
