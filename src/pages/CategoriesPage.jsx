@@ -16,20 +16,20 @@ const CategoriesPage = () => {
     "technology",
   ];
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         `https://newsapi.org/v2/top-headlines/sources?category=${category}&apiKey=${KEY}`
-  //       );
-  //       const data = await response.json();
-  //       setNewsData(data.sources);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, [category]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `https://newsapi.org/v2/top-headlines/sources?category=${category}&apiKey=${KEY}`
+        );
+        const data = await response.json();
+        setNewsData(data.sources);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, [category]);
 
   const categoryHandler = (e) => {
     setCategory(e.target.value);
