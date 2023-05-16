@@ -14,8 +14,8 @@ Ronnie Rios
 
 ## Installation
 To install this project:
-1.  `cd` into the `client` folder and run the command `npm i` or `npm install`.
-2. `npm i dotenv` and then create an `env fie` with `touch .env`. 
+1.  Clone down this project and in the root directory run the command `npm i` or `npm install`.
+2. `npm i dotenv` and then create an `env file` with `touch .env`. 
 3. Add the API key to `.env` file and set it to the following:
 
 ```bash
