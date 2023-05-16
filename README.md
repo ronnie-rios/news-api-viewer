@@ -5,10 +5,20 @@ This is a React app that uses Tailwind CSS to display news articles from this [A
 
 ## Technologies
 - React
-- Tailwind
+- React-Router-Dom
+- Tailwind CSS
 - [News API]('https://newsapi.org/docs/get-started')
 
 ## Contributors
 Ronnie Rios
 
-## Deployed Link
+## Installation
+To install this project:
+1.  `cd` into the `client` folder and run the command `npm i` or `npm install`.
+2. `npm i dotenv` and then create an `env fie` with `touch .env`. 
+3. Add the API key to `.env` file and set it to the following:
+
+```bash
+REACT_APP_KEY=
+```
+***Note the API key will be sent over email.***
