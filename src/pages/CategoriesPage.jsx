@@ -34,7 +34,6 @@ const CategoriesPage = () => {
   const categoryHandler = (e) => {
     setCategory(e.target.value);
   };
-  console.log(newsData);
   return (
     <section className="p-10">
       <h2 className="mb-8 font-medium text-2xl">Search for Different News Publishers by Category</h2>

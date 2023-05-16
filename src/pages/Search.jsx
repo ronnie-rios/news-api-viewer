@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import SearchForm from "../components/SearchForm";
 import NewsCard from "../components/NewsCard";
-import { useCountry } from "../context/countrycontext";
 
 const KEY = process.env.REACT_APP_KEY;
 
@@ -13,7 +12,7 @@ const Search = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `https://newsapi.org/v2/top-headlines?}&q=${query}&apiKey=${KEY}`
+        `https://newsapi.org/v2/top-headlines?q=${query}&apiKey=${KEY}`
       );
 
       const data = await response.json();
@@ -25,12 +24,14 @@ const Search = () => {
   const onSubmit = (data) => {
     setQuery(data);
   };
-
+  const handleSelected = (item) => {
+    setSelectedItem(item);
+  };
   return (
     <div>
       <SearchForm searchSubmit={onSubmit} />
 
-      <section className="grid md:grid-cols-3 gap-4 mt-4">
+      <section className="grid md:grid-cols-3 gap-4 mt-4 p-4">
         <h2 className="text-2xl font-medium">Search Results</h2>
         {newsData &&
           newsData.map((item, i) => (
@@ -40,6 +41,7 @@ const Search = () => {
                 imgsrc={item.urlToImage}
                 description={item.description}
                 key={i}
+                handleSelected={() => handleSelected(item)}
               />
               {selectedItem && selectedItem.title === item.title && (
                 <div className="p-4 text-center bg-gray-100 border rounded-md">

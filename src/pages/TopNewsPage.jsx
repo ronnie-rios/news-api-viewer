@@ -69,12 +69,3 @@ const TopNewsPage = () => {
 
 export default TopNewsPage;
 
-// {
-//   selectedItem && selectedItem.title === item.title ? (
-//     <Modal isOpen={modalIsOpen}>
-//       <button onClick={() => setModalIsOpen(false)}>Close</button>
-//     </Modal>
-//   ) : (
-//     ""
-//   );
-// }
