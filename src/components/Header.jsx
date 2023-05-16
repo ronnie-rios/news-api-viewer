@@ -7,20 +7,20 @@ const Header = () => {
   return (
     <nav className="p-4 w-full top-0 left-0 right-0">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <button className="btn btn-ghost normal-case text-xl">
+        <p className="btn btn-ghost normal-case text-xl hover:underline pb-2">
           <Link to="/">Top News</Link>
-        </button>
+        </p>
         <li className="block pl-3 pr-4">
-          <button onClick={toggleCountry} className="bg-gray-200 p-4">
+          <button onClick={toggleCountry} className="bg-gray-200 p-4 rounded-lg">
             {country === "us" ? "View Great Britain News" : "View US News"}
           </button>
         </li>
-        <ul className="flex flex-row font-medium">
+        <ul className="flex flex-row font-medium ">
           <Link to="/categories">
-            <li className="block pl-3 pr-4">Categories</li>
+            <li className="block pl-3 pr-4 hover:underline pb-2">Categories</li>
           </Link>
           <Link to="/search">
-            <li className="block pl-3 pr-4">Search</li>
+            <li className="block pl-3 pr-4 hover:underline pb-2">Search</li>
           </Link>
         </ul>
       </div>

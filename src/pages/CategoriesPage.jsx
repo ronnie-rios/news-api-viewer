@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import NewsCard from "../components/NewsCard";
 
 const KEY = process.env.REACT_APP_KEY;
 

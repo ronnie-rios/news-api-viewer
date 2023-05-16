@@ -24,7 +24,8 @@ const TopNewsPage = () => {
   }, [country]);
 
   return (
-    <main>
+    <main className="p-10">
+      <h2>Search top news from {country === 'gb' ? 'Great Britain' : 'United States'}</h2>
       <section>
         {newsData &&
           newsData.map((item, i) => (

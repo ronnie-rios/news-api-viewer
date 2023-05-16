@@ -1,24 +1,25 @@
 import { useState, useEffect } from "react";
 import SearchForm from "../components/SearchForm";
 import NewsCard from "../components/NewsCard";
+import { useCountry } from "../context/countrycontext";
 
 const KEY = process.env.REACT_APP_KEY;
 
 const Search = () => {
   const [newsData, setNewsData] = useState();
   const [query, setQuery] = useState("");
-
+  const { country } = useCountry()
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `https://newsapi.org/v2/everything?q=${query}&apiKey=${KEY}`
+        `https://newsapi.org/v2/top-headlines?country=${country}&q=${query}&apiKey=${KEY}`
       );
 
       const data = await response.json();
       setNewsData(data.articles);
     };
     fetchData();
-  }, [query]);
+  }, [country, query]);
 
   const onSubmit = (data) => {
     setQuery(data);
