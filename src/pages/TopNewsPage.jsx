@@ -6,7 +6,8 @@ const KEY = process.env.REACT_APP_KEY;
 const TopNewsPage = () => {
   const [newsData, setNewsData] = useState([]);
   
-  const { country } = useCountry()
+  const { country } = useCountry();
+  
   useEffect(() => {
     const fetchData = async () => {
       try {

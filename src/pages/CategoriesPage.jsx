@@ -8,7 +8,7 @@ const CategoriesPage = () => {
   const [category, setCategory] = useState("");
 
   const categories = [
-    " business",
+    "business",
     "entertainment",
     "general",
     "health",
@@ -38,7 +38,7 @@ const CategoriesPage = () => {
   console.log(newsData);
   return (
     <section className="p-10">
-      <h2 className="mb-8">Search for Different News Publishers by Category</h2>
+      <h2 className="mb-8 font-medium">Search for Different News Publishers by Category</h2>
       <form>
         <select onChange={categoryHandler}>
           <option>Select a category</option>
@@ -50,7 +50,7 @@ const CategoriesPage = () => {
       <div>
         {newsData &&
           newsData.map((item, i) => (
-            <div className="p-6">
+            <div key={item.id}className="p-6">
               <h2>News Source: {item.name}</h2>
               <p>{item.description}</p>
             </div>
