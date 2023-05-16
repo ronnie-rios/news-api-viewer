@@ -16,20 +16,20 @@ const CategoriesPage = () => {
     "technology",
   ];
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `https://newsapi.org/v2/top-headlines/sources?category=${category}&apiKey=${KEY}`
-        );
-        const data = await response.json();
-        setNewsData(data.sources);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-  }, [category]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         `https://newsapi.org/v2/top-headlines/sources?category=${category}&apiKey=${KEY}`
+  //       );
+  //       const data = await response.json();
+  //       setNewsData(data.sources);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [category]);
 
   const categoryHandler = (e) => {
     setCategory(e.target.value);
@@ -37,7 +37,7 @@ const CategoriesPage = () => {
   console.log(newsData);
   return (
     <section className="p-10">
-      <h2 className="mb-8 font-medium">Search for Different News Publishers by Category</h2>
+      <h2 className="mb-8 font-medium text-2xl">Search for Different News Publishers by Category</h2>
       <form>
         <select onChange={categoryHandler}>
           <option>Select a category</option>
